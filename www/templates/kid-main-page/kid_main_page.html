@@ -1,0 +1,35 @@
+<ion-view class="kid-chat-menu">
+  <ion-content>
+    <div class="menu-block">
+      <img src="./img/kid-chat-menu/button.png" ng-click="vm.toMenu()">
+    </div>
+      <div class="main-block">
+        <div class="call-and-chat">
+          <div class="chat" ng-click="vm.toChat()">
+            <img src="./img/kid-chat-menu/Chat-Hero.png">
+            <span ng-if="vm.missedMessages">{{vm.missedMessages}}</span>
+          </div>
+
+          <div class="call" ng-click="vm.toCall()">
+            <img src="./img/kid-chat-menu/Call-Hero.png">
+            <span ng-if="vm.missedCalls">{{vm.missedCalls}}</span>
+          </div>
+        </div>
+
+        <div class="live-now-main-block">
+
+          <div ng-repeat="(key, live_event) in vm.live_content" class="event-block">
+            <div class="event-description">
+              <p class="event-title">{{live_event.title}}</p>
+              <p class="event-live">{{live_event.status}}</p>
+            </div>
+            <img src="./img/additional-content/1.png" class="event-bg" ng-if="key === 0">
+            <img src="./img/additional-content/2.png" class="event-bg" ng-if="key > 0">
+            <img src="./img/additional-content/play.png" class="play">
+          </div>
+
+          <div style="padding: 1px;"></div>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

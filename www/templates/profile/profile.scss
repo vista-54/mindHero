@@ -1,0 +1,168 @@
+.profile {
+
+  .main-block {
+    height: 100vh;
+    min-height: 568px;
+    width: 100vw;
+    background: url('../img/registration/registration.png') no-repeat;
+    background-size: cover;
+    padding: 0 10px;
+  }
+
+  .title {
+    font-family: American;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 31px;
+    color: #0b1138;
+    font-weight: 900;
+    padding-top: 43px;
+  }
+
+  .tooltip {
+    font-family: AmericanPatrius;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+    color: #0b1138;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .name {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 62px;
+
+    .name-img {
+      position: absolute;
+      height: 100px;
+      top: -51px;
+      left: -2px;
+    }
+  }
+
+  .email {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 26px;
+
+    .email-img {
+      position: absolute;
+      height: 84px;
+      top: -20px;
+      left: 2px;
+    }
+  }
+
+  .id {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 26px;
+
+    .id-img {
+      position: absolute;
+      height: 86px;
+      top: -19px;
+      left: 1px;
+    }
+  }
+
+  .input {
+    padding-left: 70px;
+    font-size: 18px;
+    font-family: AmericanPatrius;
+    width: calc(100% - 32px);
+    height: 49px;
+    border: 2px solid #0b1138;
+    border-radius: 5px;
+    margin-left: 32px;
+  }
+
+  .save {
+    font-family: AmericanPatrius;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 19px;
+    color: #fff;
+    font-weight: 700;
+    width: 100%;
+    line-height: 46px;
+    border: 2px solid #0b1138;
+    border-radius: 5px;
+    margin: 46px auto 0;
+    background: url('../img/registration/save-button.png') center no-repeat;
+    background-size: 140%;
+  }
+
+  .warning {
+    border: 2px solid red;
+  }
+
+  .back-to-settings {
+    position: absolute;
+    z-index: 10;
+    top: 27px;
+    left: 0;
+
+    img {
+      padding: 10px;
+      height: 45px;
+    }
+  }
+}
+
+.tutorial-modal {
+  background: url("../img/tutorial/tutorial-bg.png") no-repeat center;
+  background-size: cover;
+  position: relative;
+  height: fit-content;
+
+
+  .close-tutorial-modal {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    height: 55px;
+  }
+
+  .slider-main-block {
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 40px 0;
+  }
+  .tutorial-header {
+    font-family: American;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin: 0;
+  }
+  .tutorial-content {
+    font-family: Neue;
+    margin: 0;
+
+  }
+  .tutorial-img {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+  }
+
+}
+.test-modal {
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   width: 80%;
+   height: 30%;
+   min-height: 50px;
+ }

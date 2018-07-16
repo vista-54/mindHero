@@ -1,0 +1,130 @@
+<ion-view class="auth-tel">
+  <ion-content>
+
+    <div class="main-block">
+
+      <div class="form-block">
+
+        <div class="tel-block" ng-if="vm.show.phoneMenu">
+          <div class="man">
+            <img src="./img/authorization/mind-hero-man.png" class="logo">
+          </div>
+
+          <div class="post-zone">
+            <div class="input-block">
+              <img src="./img/authorization/phone.png" class="phone-ico">
+
+              <div class="country-and-phone">
+                <div class="country-select" ng-click="modalCountry.show()">
+                  {{vm.countryCode}}
+                </div>
+
+                <input class="input-phone"
+                       type="tel"
+                       ng-model="vm.phone"
+                       maxlength="10"
+                       autofocus
+                       ng-focus="vm.test()"
+                       ng-blur="vm.test2()"
+                       oninput="this.value = this.value.replace(/\D/, '')">
+              </div>
+            </div>
+
+            <div class="tooltip">
+              <span>insert your number</span>
+            </div>
+
+            <div class="login-button" ng-click="vm.checkPhone()">
+              <span>login</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-block" ng-if="vm.show.codeApproval">
+
+          <div class="post-zone">
+
+            <div class="tooltip notification">
+              <p>an sms with a code was set</p>
+              <!--<p>to {{vm.phoneNumberFull}}</p>-->
+              <p>to {{vm.countryCode}} {{vm.phone}}</p>
+            </div>
+
+            <div class="approval-input">
+              <input class="input-code"
+                     type="text"
+                     ng-model="vm.approvalCode"
+                     maxlength="4"
+                     autofocus
+                     oninput="this.value = this.value.replace(/\D/, '')">
+
+            </div>
+
+            <div class="tooltip receive-code">
+              <span>didn't receive any code?</span>
+            </div>
+
+            <div class="trouble-block">
+              <div class="trouble">
+                <img src="./img/authorization/send-again.png" class="send-again-img"
+                     ng-click="vm.sendAgain()">
+              </div>
+              <div class="trouble">
+                <img src="./img/authorization/change-number.png" class="change-number-img"
+                     ng-click="vm.changeNumber()">
+              </div>
+            </div>
+
+            <div class="login-button" ng-click="vm.checkCode()">
+              <span class="button-title">continue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+<script id="country-modal" type="text/ng-template">
+  <ion-modal-view class="country-modal">
+
+    <ion-header-bar class="bar bar-header bar-calm" ng-click="modalCountry.hide()">
+      <a class="button icon-left ion-chevron-left button-clear button-dark"></a>
+    </ion-header-bar>
+
+    <ion-content class="padding">
+      <input ng-model="vm.countryFilter" class="country-filter" placeholder="Enter country">
+      <div class="codes-block">
+        <div ng-repeat="country in vm.countryCodes | filter: vm.countryFilter">
+          <ion-radio ng-model="vm.countryCode" ng-value="country.code"
+                     ng-click="vm.chosenCountry()">
+            {{country.name}}: {{country.code}}
+          </ion-radio>
+        </div>
+      </div>
+
+    </ion-content>
+
+  </ion-modal-view>
+</script>
+
+<script id="access-denied" type="text/ng-template">
+  <div class="kid-backdrop" ng-click="accessDeniedModal.hide()"></div>
+  <ion-modal-view class="access-denied-modal">
+
+    <ion-content class="main-block">
+
+      <div class="data-block">
+        <div class="warning-line">
+          <img src="./img/authorization/warning.png" class="warning-ico">
+          <p class="title-km">no access</p>
+        </div>
+
+        <p class="title-km">please contact your parent</p>
+      </div>
+
+      <img src="./img/authorization/close.png" class="close" ng-click="accessDeniedModal.hide()">
+    </ion-content>
+
+  </ion-modal-view>
+</script>

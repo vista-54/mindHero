@@ -1,0 +1,44 @@
+<ion-view class="my-menu">
+  <ion-content>
+
+    <div class="main-block">
+
+      <div class="header">
+        <img src="./img/menu/tool-bar-icon.png" class="tool-bar-icon"
+        ng-click="vm.toMainPage()">
+      </div>
+
+      <div class="first-section">
+        <img src="./img/menu/payment-details.png" class="payment img-high"
+             ng-click="vm.paymentDetail()" ng-if="vm.userType('parent')">
+        <img src="./img/menu/settings.png" class="settings img-high"
+             ng-click="vm.settings()" ng-if="vm.userType('parent')">
+        <img src="./img/menu/settings-kid.png" class="additional-content img-high"
+             ng-click="vm.settings()" ng-if="vm.userType('kid')">
+      </div>
+
+      <div class="second-section">
+        <img src="./img/menu/additional-content.png" class="additional-content img-high"
+             ng-click="vm.additionalContent()">
+      </div>
+
+      <div class="third-section">
+        <div class="left">
+          <img src="./img/menu/logout.png" class="logout img-high"
+               ng-click="vm.logout()">
+        </div>
+        <div class="right">
+          <img src="./img/menu/about-us.png" class="about-us img-low"
+               ng-click="vm.aboutUs()">
+
+          <a href="mailto:somemail@someservice.com">
+            <img src="./img/menu/contact-us.png" class="contact-us img-low"
+                 ng-click="vm.contactUs()">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-view class="psy-logs">
+    <ion-content>
+        <div class="menu-block">
+
+            <img src="./img/kid-chat-room/back-arrow.png" ng-click="vm.toMainPage()">
+            <p ng-if="vm.kidName">{{vm.kidName}}</p>
+            <img src="./img/logs/settings.png" class="icon-menu" ng-click="vm.toKid()" ng-if="vm.editRights">
+            <div class="empty-block" ng-if="!vm.editRights"></div>
+        </div>
+        <div class="main-block" id="logs">
+
+          <!--<div ng-repeat="(key, log) in vm.logs.slice().reverse()">-->
+          <div ng-repeat="(key, log) in vm.logs">
+            <div ng-class="vm.logStatus(log)">
+
+              <div>
+                <div class="title-date">
+                  <p>{{vm.getConsultName(log)}}</p>
+                  <div class="date-block">
+                    <img src="./img/logs/warning.png" ng-if="vm.emergencyView(log)">
+                    <p class="date">{{vm.dateConverter(log)}} <br><span>{{vm.timeConverter(log)}}</span></p>
+                  </div>
+                </div>
+
+                <div class="message-block" >
+                  <div class="call-the-kid" ng-if="vm.emergencyView(log)">
+                    <a ng-href="{{vm.kidPhone()}}">
+                      <img src="./img/logs/phone.png">
+                      <p>call the kid</p>
+                    </a>
+                  </div>
+
+                  <p ng-click="vm.showAllInfo(key)" ng-class="vm.showAllNormalStatus(key)">{{log.content}}</p>
+                </div>
+              </div>
+
+              <div ng-if="vm.fullEmergencyLog(key)" class="full-emergency-log">
+                <p>{{log.content}}</p>
+              </div>
+
+              <img src="./img/logs/down-arrow.png" class="open-arrow" ng-click="vm.showAllInfo(key)" ng-class="vm.arrowAnimation(key)">
+            </div>
+          </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>
+

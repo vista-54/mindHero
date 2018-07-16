@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width,viewport-fit=cover">
     <title></title>
 
     <link rel="manifest" href="manifest.json">
@@ -15,31 +15,122 @@
           .catch(err => console.log('Error', err));
       }
     </script>-->
-
+    <link rel="stylesheet" href="lib/angular-ui-select/dist/select.min.css">
+    <link rel="stylesheet" href="lib/angular-toastr/dist/angular-toastr.min.css">
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/jr-crop/dist/jr-crop.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- modal animate -->
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" rel="stylesheet">
+    <!--<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>-->
+
+    <!--<link rel="stylesheet" href="components/ionic-segment/dist/ionic.segment.css">-->
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
     <!-- ionic/angularjs js -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <!--<script src="lib/highcharts/highstock.src.js"></script>-->
+    <!--<script src="lib/highcharts-ng/dist/highcharts-ng.js"></script>-->
+    <!--<script src="lib/highcharts/modules/exporting.js"></script>-->
+    <script src="lib/angular-ui-select/dist/select.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+    <script src="lib/chart.js/dist/Chart.js"></script>
+    <script src="lib/jr-crop/dist/jr-crop.min.js"></script>
+    <script src="lib/ng-file-upload/ng-file-upload-all.min.js"></script>
+    <script src="lib/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="app.js"></script>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
-  </body>
+</head>
+<body ng-app="app">
+<!--
+  The nav bar that will be updated as we navigate between views.
+-->
+<!--<ion-nav-bar class="bar-stable">-->
+<!--<ion-nav-back-button>-->
+<!--</ion-nav-back-button>-->
+<!--</ion-nav-bar>-->
+<!--
+  The views will be rendered in the <ion-nav-view> directive below
+  Templates are in the /templates folder (but you could also
+  have templates inline in this html file if you'd like).
+-->
+
+
+<ion-nav-view></ion-nav-view>
+
+</body>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+<!--core-->
+<script src="core/core.module.js"></script>
+<script src="core/core.config.js"></script>
+
+<!--blocks-->
+<script src="core/blocks/directives/directives.module.js"></script>
+<script src="core/blocks/filters/filters.module.js"></script>
+<script src="core/blocks/services/services.module.js"></script>
+<script src="core/blocks/request/request.module.js"></script>
+
+<!--controllers-->
+<script src="templates/authorization-telephone/authorization-telephone.controller.js"></script>
+<script src="templates/additional-content/additional-content.controller.js"></script>
+<script src="templates/additional-content-favorites/additional-content-favorites.controller.js"></script>
+<script src="templates/additional-content-search/additional-content-search.controller.js"></script>
+<script src="templates/parent-main-page/parent-main-page.controller.js"></script>
+<script src="templates/kid-main-page/kid_main_page.controller.js"></script>
+<script src="templates/kid-chat/kid-chat.controller.js"></script>
+<script src="templates/kid-messages/kid-messages.controller.js"></script>
+<script src="templates/kid/kid.controller.js"></script>
+<script src="templates/hero-selection/hero-selection.controller.js"></script>
+<script src="templates/profile/profile.controller.js"></script>
+<script src="templates/logs/logs.controller.js"></script>
+<script src="templates/menu/menu.controller.js"></script>
+<script src="templates/payment/payment.controller.js"></script>
+<script src="templates/payments-history/payments-history.controller.js"></script>
+<script src="templates/settings/settings.controller.js"></script>
+<script src="templates/notifications/notifications.controller.js"></script>
+<script src="templates/about-us/about-us.controller.js"></script>
+<script src="templates/terms-conditions/terms-conditions.controller.js"></script>
+
+<script src="templates/test/test.controller.js"></script>
+
+<!--services-->
+<script src="services/additionalContent.service.js"></script>
+<script src="services/user.service.js"></script>
+<script src="services/consultant.service.js"></script>
+<script src="services/security.service.js"></script>
+<script src="services/popUpMessage.service.js"></script>
+<script src="services/notification.service.js"></script>
+<script src="services/fcm.service.js"></script>
+
+<!--factories-->
+<script src="factories/request.factory.js"></script>
+<script src="factories/url.factory.js"></script>
+<script src="factories/date.convert.js"></script>
+<script src="factories/util.factory.js"></script>
+<script src="factories/countryCodes.factory.js"></script>
+
+<!-- filters -->
+
+<script src="filters/unique.filter.js"></script>
+
+<!--directives-->
+<script src="components/segment/ionic.segment.js"></script>
 </html>
