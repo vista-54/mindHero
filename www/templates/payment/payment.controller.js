@@ -5,7 +5,7 @@
     .controller('PaymentController', PaymentController);
 
   PaymentController.$inject = ['$localStorage', '$state', '$scope', 'userService', '$timeout', '$ionicModal',
-    'kids', 'purchaseService'];
+                                'kids', 'purchaseService'];
 
 
   function PaymentController($localStorage, $state, $scope, userService, $timeout, $ionicModal,
@@ -87,7 +87,7 @@
       console.log(kids_id);
 
       if (kids_id.length) {
-        purchaseService.buyProduct(kids_id)
+        purchaseService.buy(kids_id)
       }
     }
 

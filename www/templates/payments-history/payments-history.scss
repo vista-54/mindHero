@@ -69,52 +69,52 @@
             margin: -3px 5px 5px 0;
           }
         }
-        .invoice{
-          margin-top:7px;
-          display: inline-flex;
-          img{
-            margin-left: 5px;
-            height: 44px;
-          }
-        }
+       .invoice{
+         margin-top:7px;
+         display: inline-flex;
+         img{
+           margin-left: 5px;
+           height: 44px;
+         }
+       }
       }
     }
 
     .creditcard-block{
-      .change{
-        text-align: center;
-        margin: 0 auto 10px;
-        width: 100%;
-        line-height: 50px;
-        border: solid 2px #0b1138;
-        border-radius: 6px;
-        background: url('../img/payments-history/dots.png') no-repeat center / cover #ff7300;
-        p{
-          color: #fff;
-          font-family: Patrius;
-          text-transform: uppercase;
-          font-size: 18px;
-          margin: 0;
+    .change{
+      text-align: center;
+      margin: 0 auto 10px;
+      width: 100%;
+      line-height: 50px;
+      border: solid 2px #0b1138;
+      border-radius: 6px;
+      background: url('../img/payments-history/dots.png') no-repeat center / cover #ff7300;
+      p{
+        color: #fff;
+        font-family: Patrius;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+  }
+  }
+}
+@media (max-width: 360px) {
+  .parent-payments{
+  .main-block {
+    .info-block {
+      .payment-block {
+        .kids{
+          font-size:35px;
+        }
+        .invoice{
+          img{
+            height: 30px;
+          }
         }
       }
     }
   }
 }
-@media (max-width: 360px) {
-  .parent-payments{
-    .main-block {
-      .info-block {
-        .payment-block {
-          .kids{
-            font-size:35px;
-          }
-          .invoice{
-            img{
-              height: 30px;
-            }
-          }
-        }
-      }
-    }
-  }
 }

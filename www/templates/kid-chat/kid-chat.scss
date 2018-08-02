@@ -157,13 +157,13 @@
       display: inline-flex;
       align-items: center;
       width: 95%;
-      input{
-        height: 45px;
-        width: 86%;
-        border: solid 1px #64cae2;
-        border-radius: 30px;
-        padding: 0 10px;
-      }
+    input{
+      height: 45px;
+      width: 86%;
+      border: solid 1px #64cae2;
+      border-radius: 30px;
+      padding: 0 10px;
+    }
       ::-webkit-input-placeholder {
         font-size:17px;
         font-family: Spring;
@@ -235,9 +235,9 @@
         top: 59px;
         line-height: 48px;
         width: 200px;
-        p{
-          font-size: 25px;
-        }
+          p{
+            font-size: 25px;
+          }
       }
       p{
         font-size: 40px;
