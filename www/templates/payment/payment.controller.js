@@ -76,20 +76,18 @@
     }
 
     function pay() {
-      let kids_id = getKidsId();
-
-      function getKidsId() {
-        let arr = [];
-        angular.forEach(vm.kids, function (kid) { arr.push(kid.id) });
-        return arr
-      }
-
-      console.log(kids_id);
-
-      if (kids_id.length) {
-        purchaseService.buy(kids_id)
-      }
+      purchaseService.buyProduct('com.mind.hero.month_test')
+      // purchaseService.buyProduct('com.mind.hero.month.test2')
     }
+    $timeout(function () {
+      purchaseService.getProducts(['com.mind.hero.month_test']);
+      // purchaseService.getProducts(['com.mind.hero.month_test', 'com.mind.hero.month.test2']);
+    }, 1000);
 
+    $ionicModal.fromTemplateUrl('payment-modal', {
+      scope: $scope
+    }).then(function (modal) {
+      $scope.paymentModal = modal;
+    });
   }
 })();

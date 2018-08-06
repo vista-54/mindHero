@@ -11,11 +11,9 @@
     angular.module('app', ['ionic', 'app.core', 'app.services', 'app.directives', 'app.request', 'app.filters'])
         .run(run);
 
-    run.$inject = ['$ionicPlatform', '$timeout', '$state', 'toastr', 'fcm', 'userService', '$ionicSideMenuDelegate',
-                   'purchaseService'];
+    run.$inject = ['$ionicPlatform', '$timeout', '$state', 'toastr', 'fcm', 'userService', '$ionicSideMenuDelegate'];
 
-    function run($ionicPlatform, $timeout, $state, toastr, fcm, userService, $ionicSideMenuDelegate,
-                 purchaseService) {
+    function run($ionicPlatform, $timeout, $state, toastr, fcm, userService, $ionicSideMenuDelegate) {
 
         // Array.prototype.sum = function () {
         //     return this.reduce(function (a, b) {
